@@ -1,20 +1,36 @@
-<html>
-    <head>
-       <link rel="stylesheet" href="style.css">
-    </head>
-  
-    <body>
-        
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Música Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    </body>
-    <h1> Identificador de Musica Online </h1>
-    
-    <br>
-   
-    <center><div class="boton">
-        <img src="images/puchale.png" width="400px">
-    </div></center>
-    <br> <br> <br> 
-    <h2> Toca para escuchar <br> y descubrir </h2>
-    <h3> Identifica canciones con solo una pista de Audio totalmente gratis </h3>
+    <h1 class="titulo-fijo">Identificador de Musica Online</h1>
+
+    <div class="contenedor-principal">
+        <div class="boton" id="btnMicrofono">
+            <img src="images/puchale.png" alt="Botón de escucha">
+        </div>
+    </div>
+
+    <div class="textos-inferiores">
+        <h2>Toca para escuchar <br> y descubrir</h2>
+        <h3>Identifica canciones con solo una pista de Audio totalmente gratis</h3>
+    </div>
+
+    <script>
+        const boton = document.getElementById('btnMicrofono');
+        boton.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                alert("Escuchando...");
+            } catch (err) {
+                alert("Para identificar permita acceso al microfono");
+            }
+        });
+    </script>
+</body>
 </html>
