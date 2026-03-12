@@ -1,24 +1,15 @@
+.boton-identificador {
+  /* En lugar de un ancho fijo, usamos un % del ancho de la pantalla */
+  width: 65%; 
+  
+  /* Evitamos que sea demasiado pequeño o demasiado grande */
+  max-width: 250px; 
+  min-width: 150px;
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-
-aside, article {
-  width: 100%;
-}
-
-
-@media (min-width: 768px) {
-  main {
-    flex-direction: row; 
-  }
-
-  aside {
-    width: 30%; 
-  }
-
-  article {
-    width: 70%; 
-  }
+  /* Mantenemos la forma circular si lo requiere el diseño */
+  aspect-ratio: 1 / 1; 
+  height: auto;
+  
+  /* Lo centramos (si no lo está ya por el contenedor flex de main) */
+  margin: 20px auto; 
 }
