@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identificador de Música Online</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:599px)">
+    <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:600px) and (max-width:1023px)">
+    <link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1024px)">
 </head>
 <body>
 
@@ -21,10 +26,18 @@
         <h3>Identifica canciones con solo una pista de Audio totalmente gratis</h3>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script>
+        const boton = document.getElementById('btnMicrofono');
+        boton.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                alert("Escuchando...");
+            } catch (err) {
+                alert("Para identificar permita acceso al microfono");
+            }
+        });
     </script>
 </body>
 </html>
+
 
