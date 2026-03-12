@@ -1,11 +1,24 @@
-main{
-flex-direction: column;
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
-aside{
-width:100%;
+aside, article {
+  width: 100%;
 }
 
-article{
-width:100%;
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row; 
+  }
+
+  aside {
+    width: 30%; 
+  }
+
+  article {
+    width: 70%; 
+  }
 }
